@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kak Ji yang Paling Spesial ❤️</title>
+    <style>
+        /* CSS untuk tampilan yang romantis dan interaktif */
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-pink: #d13a5a;
+            --light-pink: #fce4ec;
+            --dark-text: #4a4a4a;
+            --white-trans: rgba(255, 255, 255, 0.95);
+        }
+
+        html {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="%23D13A5A" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') 12 12, auto; /* Custom heart cursor */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f0f4; /* Fallback for video */
+            overflow: hidden;
+            color: var(--dark-text);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Video Background */
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2; /* Paling belakang */
+            background-size: cover;
+            filter: brightness(0.7) grayscale(0.1); /* Sedikit redup & monokrom */
+            animation: fadeInVideo 2s forwards;
+        }
+
+        @keyframes fadeInVideo {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 204, 204, 0.35); /* Overlay pink transparan */
+            z-index: -1; /* Di atas video, di bawah konten */
+        }
+
+        /* Animated Couple Image */
+        #animated-couple {
+            position: absolute;
+            bottom: -50px; /* Mulai dari bawah layar */
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+            max-width: 600px; /* Ukuran yang wajar */
+            width: 80%; /* Responsif */
+            height: auto;
+            z-index: 1; /* Di depan video/overlay, di belakang container */
+            opacity: 0;
+            animation: slideUpFadeIn 2s forwards 1s ease-out; /* Animasi masuk */
+        }
+
+        @keyframes slideUpFadeIn {
+            to {
+                bottom: 0; /* Posisi akhir */
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            background-color: var(--white-trans);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Bayangan lebih dalam */
+            max-width: 580px; /* Lebih lebar sedikit */
+            transform: scale(0.7) translateY(50px);
+            opacity: 0;
+            animation: pop-in 1.5s forwards 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Animasi pop-in yang lebih dramatis */
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Untuk love radar */
+        }
+
+        .container:hover { /* Efek love radar */
+            transform: scale(1.02) translateY(0);
+            box-shadow: 0 15px 50px rgba(209, 58, 90, 0.3);
+        }
+
+        @keyframes pop-in {
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary-pink);
+            font-size: 3.5em; /* Ukuran lebih besar */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            animation: pulseText 2s infinite alternate; /* Animasi teks judul */
+        }
+
+        @keyframes pulseText {
+            from { transform: scale(1); }
+            to { transform: scale(1.03); }
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2em; /* Ukuran lebih besar */
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        #special-message {
+            margin-top: 35px;
+            padding: 25px; /* Padding lebih besar */
+            background-color: var(--light-pink);
+            border-left: 8px solid var(--primary-pink); /* Border lebih tebal */
+            border-radius: 12px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease-out;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        #special-message p {
+            margin: 0;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6em; /* Ukuran pesan lebih besar */
+            color: var(--primary-pink);
+            font-weight: 700;
+        }
+
+        #typing-cursor {
+            display: inline-block;
+            width: 4px; /* Kursor lebih tebal */
+            height: 1.3em;
+            background-color: var(--primary-pink);
+            margin-left: 5px;
+            animation: blink-caret 0.75s step-end infinite;
+            vertical-align: middle;
+        }
+
+        button {
+            background-color: var(--primary-pink);
+            color: white;
+            border: none;
+            padding: 16px 35px; /* Ukuran tombol lebih besar */
+            border-radius: 35px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 35px;
+            transition: background-color 0.3s ease, transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.3s ease;
+            box-shadow: 0 8px 25px rgba(209, 58, 90, 0.5);
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            position: relative;
+            overflow: hidden; /* Untuk efek sparkle */
+        }
+
+        button:hover {
+            background-color: #b32e49;
+            transform: translateY(-7px) scale(1.02); /* Lebih tinggi dan sedikit membesar */
+            box-shadow: 0 15px 35px rgba(209, 58, 90, 0.7);
+        }
+
+        button:active {
+            transform: translateY(-3px) scale(0.98);
+            box-shadow: 0 6px 15px rgba(209, 58, 90, 0.4);
+        }
+
+        /* Sparkle effect for button (remains) */
+        button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+        }
+
+        button:hover::after {
+            width: 200px;
+            height: 200px;
+            opacity: 1;
+        }
+
+        /* Hati berjatuhan seperti salju */
+        .heart-snow {
+            position: absolute;
+            background-color: var(--primary-pink);
+            width: 15px;
+            height: 15px;
+            transform: rotate(-45deg);
+            animation: fall-snow 10s linear infinite;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1; /* Di atas overlay, di bawah container */
+        }
+        .heart-snow::before, .heart-snow::after {
+            content: ''; position: absolute; background-color: var(--primary-pink); width: 15px; height: 15px; border-radius: 50%;
+        }
+        .heart-snow::before { top: -7.5px; left: 0; }
+        .heart-snow::after { top: 0; left: 7.5px; }
+        @keyframes fall-snow {
+            0% { transform: translateY(-10vh) rotate(-45deg) scale(0); opacity: 0; }
+            10% { opacity: 0.8; transform: translateY(0vh) rotate(-45deg) scale(1); }
+            80% { opacity: 0.8; }
+            100% { transform: translateY(110vh) rotate(-45deg) scale(0.5); opacity: 0; }
+        }
+
+        /* Partikel Berkilauan (Fairy Dust) */
+        .fairy-dust {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: fadeAndFloat 2s forwards;
+            box-shadow: 0 0 5px rgba(255,255,255,0.7);
+            z-index: 3; /* Di depan semua */
+        }
+
+        @keyframes fadeAndFloat {
+            0% { transform: scale(0) translateY(0); opacity: 0; }
+            20% { transform: scale(1) translateY(-10px); opacity: 1; }
+            100% { transform: scale(0.5) translateY(-50px); opacity: 0; }
+        }
+
+        /* Pop-up Love Note */
+        .love-note-popup {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: rgba(255, 255, 255, 0.98);
+            border: 2px solid var(--primary-pink);
+            border-radius: 15px;
+            padding: 20px 25px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            max-width: 280px;
+            text-align: left;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3em;
+            color: var(--primary-pink);
+            z-index: 100;
+            transform: scale(0.5) translateX(100%);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            display: none; /* Sembunyikan secara default */
+        }
+
+        .love-note-popup.show {
+            display: block;
+            transform: scale(1) translateX(0);
+            opacity: 1;
+        }
+
+        .love-note-popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #888;
+            transition: color 0.2s;
+        }
+
+        .love-note-popup .close-btn:hover {
+            color: var(--primary-pink);
+        }
+
+        /* Music control button */
+        #music-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(209, 58, 90, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 101;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #music-toggle:hover {
+            background-color: var(--primary-pink);
+            transform: scale(1.1);
+        }
+
+        /* Heart Click Animation */
+        .click-heart {
+            position: absolute;
+            background-color: var(--primary-pink);
+            width: 20px;
+            height: 20px;
+            transform: rotate(-45deg) scale(0);
+            opacity: 0;
+            pointer-events: none;
+            animation: click-heart-anim 0.8s ease-out forwards;
+            z-index: 4;
+        }
+
+        .click-heart::before, .click-heart::after {
+            content: '';
+            position: absolute;
+            background-color: var(--primary-pink);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .click-heart::before { top: -10px; left: 0; }
+        .click-heart::after { top: 0; left: 10px; }
+
+        @keyframes click-heart-anim {
+            0% { transform: rotate(-45deg) scale(0); opacity: 1; }
+            50% { transform: rotate(-45deg) scale(1.2); opacity: 1; }
+            100% { transform: rotate(-45deg) scale(0) translateY(-50px); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline id="video-background">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-on-a-balcony-2223-large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay"></div>
+
+    <img id="animated-couple" src="https://i.imgur.com/your-couple-hug-image.png" alt="Animated Couple Hug"> <audio id="background-music" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="heartbeat-sound" loop preload="auto">
+        <source src="https://www.soundjay.com/misc/sounds/heartbeat-01a.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+    </audio>
+
+    <button id="music-toggle" aria-label="Toggle Music">
+        <span id="music-icon">🔇</span>
+    </button>
+
+    <div class="container">
+        <h1>Untuk Kak Ji.. ❤️</h1>
+        <p>Aku tahu mungkin hari ini kamu lagi capek. Nggak apa-apa kok kalau merasa begitu. Tapi aku mau Kak Ji tahu, senyum dan semangat Kak Ji itu sangat berharga banget buat aku. Jangan pernah merasa sendiri ya...</p>
+        
+        <div id="special-message">
+            <p><span id="typed-message"></span><span id="typing-cursor"></span></p>
+        </div>
+
+        <button id="message-button">Udah siap senyum lagi, Kan?</button>
+    </div>
+
+    <div class="love-note-popup" id="love-note-popup">
+        <span class="close-btn" id="close-note-btn">&times;</span>
+        <p>Psst... Kak Ji tahu? Setiap detik bersamamu itu anugerah. Kamu itu definisi kebahagiaan buat aku. Love you more than words!</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const messageButton = document.getElementById('message-button');
+            const typedMessageSpan = document.getElementById('typed-message');
+            const typingCursor = document.getElementById('typing-cursor');
+            const backgroundMusic = document.getElementById('background-music');
+            const heartbeatSound = document.getElementById('heartbeat-sound');
+            const musicToggle = document.getElementById('music-toggle');
+            const musicIcon = document.getElementById('music-icon');
+            const loveNotePopup = document.getElementById('love-note-popup');
+            const closeNoteBtn = document.getElementById('close-note-btn');
+            const container = document.querySelector('.container');
+
+            const initialMessages = [
+                "Halo Kak Ji, semoga hari ini lebih ceria ya!",
+                "Ingat, ada aku yang selalu sayang kamu ❤️",
+                "Semoga setiap klik membawa senyuman di wajahmu."
+            ];
+
+            const interactiveMessages = [
+                "Jangan lupa senyum ya, karena senyummu itu candu buatku. Beneran!",
+                "Kamu itu lebih kuat dari yang kamu kira. Jangan menyerah, Kak Ji!",
+                "Kalau butuh teman cerita, aku selalu ada di sini buat kamu. Kapanpun!",
+                "Lihat deh keluar jendela, ada aku yang lagi kangen hehe. Atau di sampingmu?",
+                "Semoga harimu jadi lebih baik setelah ini. I love you, banyak-banyak!",
+                "Jangan biarin hal kecil merusak harimu yang indah, kamu layak bahagia.",
+                "Kamu adalah alasan aku tersenyum hari ini. Terima kasih sudah ada.",
+                "Apapun yang terjadi, kamu tetap juara di hatiku. Selalu."
+            ];
+
+            const secretMessage = "Dan satu hal lagi, Kak Ji... Aku bersyukur banget punya kamu. Terima kasih sudah jadi dirimu sendiri, yang selalu menginspirasi dan membuat duniaku lebih berwarna. Ingat, aku akan selalu ada di sini, untuk mendukungmu dan mendengarkanmu. Sekarang, senyum dong? 😉";
+            const loveNoteContent = "Psst... Kak Ji tahu? Setiap detik bersamamu itu anugerah. Kamu itu definisi kebahagiaan buat aku. Love you more than words!";
+
+            let messageClickCount = 0;
+            let currentMessages = [...initialMessages];
+            let currentMessageIndex = 0;
+            let isMusicPlaying = false;
+            let isHeartbeatPlaying = false;
+
+            function typeWriter(text, i, fnCallback) {
+                if (i < text.length) {
+                    typedMessageSpan.innerHTML = text.substring(0, i + 1);
+                    setTimeout(() => typeWriter(text, i + 1, fnCallback), 70);
+                } else if (typeof fnCallback == 'function') {
+                    setTimeout(fnCallback, 1000);
+                }
+            }
+
+            function startMessageDisplay() {
+                typingCursor.style.display = 'inline-block';
+                const messageToType = currentMessages[currentMessageIndex];
+                typeWriter(messageToType, 0, () => {
+                    typingCursor.style.display = 'none';
+                });
+            }
+
+            startMessageDisplay();
+
+            messageButton.addEventListener('click', (e) => {
+                messageClickCount++;
+                typedMessageSpan.innerHTML = '';
+                typingCursor.style.display = 'inline-block';
+                createClickHeart(e.clientX, e.clientY); // Animasi hati saat klik tombol
+
+                if (messageClickCount >= 5 && messageClickCount < 6) {
+                    messageButton.textContent = "Baca Ini Sampai Habis ya...";
+                    typeWriter(secretMessage, 0, () => {
+                        typingCursor.style.display = 'none';
+                        messageButton.textContent = "Senyum Lagi Dong, Kak Ji!";
+                        setTimeout(() => showLoveNotePopup(), 500); // Tampilkan pop-up setelah pesan rahasia
+                    });
+                } else {
+                    currentMessages = interactiveMessages;
+                    currentMessageIndex = (currentMessageIndex + 1) % currentMessages.length;
+                    startMessageDisplay();
+
+                    if (messageClickCount % 3 === 0) {
+                        const buttonTexts = ["Lagi Dong 😍", "Apa Hayoo?", "Senyumnya Manaaa?", "Gemoynya...", "Oke, Satu Lagi!"];
+                        messageButton.textContent = buttonTexts[Math.floor(Math.random() * buttonTexts.length)];
+                    } else if (messageClickCount % 5 === 0) {
+                         messageButton.textContent = "Pencet Terus, Ya?";
+                    }
+                }
+            });
+
+            // Efek hati berjatuhan seperti salju (tetap ada)
+            function createHeartSnow() {
+                const heart = document.createElement('div');
+                heart.classList.add('heart-snow');
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = Math.random() * 5 + 8 + 's';
+                heart.style.animationDelay = Math.random() * 0.5 + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 13000);
+            }
+            setInterval(createHeartSnow, 200);
+
+            // Efek partikel berkilauan mengikuti kursor
+            function createFairyDust(x, y) {
+                const particle = document.createElement('div');
+                particle.classList.add('fairy-dust');
+                const size = Math.random() * 8 + 4; // Ukuran 4-12px
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 2000);
+            }
+
+            document.addEventListener('mousemove', (e) => {
+                if (Math.random() < 0.2) { // Tidak terlalu banyak partikel
+                    createFairyDust(e.clientX, e.clientY);
+                }
+            });
+
+            // Animasi hati saat klik tombol
+            function createClickHeart(x, y) {
+                const clickHeart = document.createElement('div');
+                clickHeart.classList.add('click-heart');
+                clickHeart.style.left = (x - 10) + 'px'; // Sesuaikan posisi tengah hati
+                clickHeart.style.top = (y - 10) + 'px';
+                document.body.appendChild(clickHeart);
+                setTimeout(() => clickHeart.remove(), 800);
+            }
+
+            // Fungsi untuk menampilkan pop-up love note
+            function showLoveNotePopup() {
+                loveNotePopup.querySelector('p').innerHTML = loveNoteContent; // Pastikan kontennya terisi
+                loveNotePopup.classList.add('show');
+            }
+
+            // Tutup pop-up love note
+            closeNoteBtn.addEventListener('click', () => {
+                loveNotePopup.classList.remove('show');
+            });
+
+            // Play music and heartbeat on first user interaction
+            let firstInteraction = false;
+            document.body.addEventListener('click', () => {
+                if (!firstInteraction) {
+                    // Try to play background music
+                    backgroundMusic.play().then(() => {
+                        isMusicPlaying = true;
+                        musicIcon.textContent = '🔊';
+                    }).catch(e => console.log("Background music autoplay blocked:", e));
+
+                    // Try to play heartbeat sound (very low volume)
+                    heartbeatSound.volume = 0.1; // Sangat pelan
+                    heartbeatSound.play().then(() => {
+                        isHeartbeatPlaying = true;
+                    }).catch(e => console.log("Heartbeat sound autoplay blocked:", e));
+
+                    firstInteraction = true;
+                }
+            }, { once: true });
+
+            // Music toggle functionality
+            musicToggle.addEventListener('click', () => {
+                if (isMusicPlaying) {
+                    backgroundMusic.pause();
+                    heartbeatSound.pause();
+                    musicIcon.textContent = '🔇';
+                } else {
+                    backgroundMusic.play().catch(e => console.log("Background music play blocked:", e));
+                    heartbeatSound.play().catch(e => console.log("Heartbeat sound play blocked:", e));
+                    musicIcon.textContent = '🔊';
+                }
+                isMusicPlaying = !isMusicPlaying;
+                isHeartbeatPlaying = !isHeartbeatPlaying; // Sinkronkan status heartbeat dengan musik utama
+            });
+
+
+            // Pesan rahasia di konsol developer (tetap ada)
+            console.log("%cUntuk Kak Ji yang manis,", "font-family: 'Dancing Script', cursive; font-size: 2em; color: #d13a5a; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);");
+            console.log("%cAku harap pesan-pesan kecil ini bisa membuatmu tersenyum hari ini.", "font-family: 'Poppins', sans-serif; font-size: 1.1em; color: #555;");
+            console.log("%cKamu adalah yang terbaik! Jangan pernah ragu akan hal itu.", "font-family: 'Poppins', sans-serif; font-size: 1.1em; color: #555;");
+            console.log("%c- Dari aku yang selalu sayang kamu.", "font-family: 'Pacifico', cursive; font-size: 1.2em; color: #d13a5a;");
+        });
+    </script>
+</body>
+</html>
